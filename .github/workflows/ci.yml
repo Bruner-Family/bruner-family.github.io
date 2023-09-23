@@ -30,6 +30,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # Installs Zola - https://www.getzola.org/documentation/getting-started/installation/
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.17.2
       # Setup Node
       - uses: actions/setup-node@v3
       # Installs node_modules (tailwind)
@@ -49,7 +53,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload public static assets
-          path: './public'
+          path: "./public"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
