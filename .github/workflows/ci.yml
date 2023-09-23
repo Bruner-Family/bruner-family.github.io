@@ -40,6 +40,17 @@ jobs:
       - run: yarn install
       # Builds ./public/
       - run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload public assets
+          path: "./public"
+      # Upload Artifact for Deploy
+      #- uses: actions/upload-artifact@v2
+      #  with:
+      #    name: static-site
+      #    path: public/
+
   # Single deploy job since we're just deploying
   deploy:
     needs: build
@@ -52,11 +63,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Upload public static assets
-          path: "./public"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

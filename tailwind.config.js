@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./templates/**/*.html", "./theme/**/*.html"],
+  content: ["./templates/**/*.html", "./theme/**/*.html"],
   theme: {},
   darkMode: 'class', // or 'media' or 'class'
   variants: {},

@@ -3,8 +3,9 @@
 ## Development and Deployment
 ```bash
 # Local Development (Runs Zola)
-yarn watch
+yarn dev
 
 # Prod Build
+# NOTE: zola build will overwrite any files added to public/ so it need to be run first
 yarn build
 ```
