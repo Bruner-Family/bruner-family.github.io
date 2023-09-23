@@ -1,6 +1,10 @@
 # Bruner Family Home Page
 
-## Tailwind CSS
+## Development and Deployment
 ```bash
-npx tailwindcss -i ./css/input.css -o ./css/main.css
+# Local Development (Runs Zola)
+yarn watch
+
+# Prod Build
+yarn build
 ```
