@@ -40,16 +40,12 @@ jobs:
       - run: yarn install
       # Builds ./public/
       - run: yarn build
+      # Upload Artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload public assets
           path: "./public"
-      # Upload Artifact for Deploy
-      #- uses: actions/upload-artifact@v2
-      #  with:
-      #    name: static-site
-      #    path: public/
 
   # Single deploy job since we're just deploying
   deploy:
